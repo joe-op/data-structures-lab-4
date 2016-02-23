@@ -123,12 +123,47 @@ void exercise4()
 //Add the definition of function exercise5
 void exercise5()
 {
-	//TODO
+	int *a;
+	a = new int[5];
+
+	// fill the array
+	for (int i = 0; i < 5; i++) {
+		*(a + i) = 3 + 4 * i;
+	}
+
+	// print address of a
+	cout << Hex(a) << endl;
+
+	// print values of a
+	for (int i = 0; i < 5; i++)
+		cout << *(a + i) << endl;
+
+	delete(a);
 }
 
 void exercise6()
 {
-	//TODO
+	cout << "Enter the size of the array: ";
+	int size_arr;
+	cin >> size_arr;
+
+	int *a;
+	a = new int[size_arr];
+
+	// fill a with random numbers between 0 and 99
+	for (int i = 0; i < size_arr; i++) {
+		*(a + i) = rand() % 100;
+	}
+
+	// print address of a
+	cout << Hex(a) << endl;
+
+	// print values in a
+	for (int i = 0; i < size_arr; i++) {
+		cout << *(a + i) << endl;
+	}
+
+	delete(a);
 }
 
 int main()
